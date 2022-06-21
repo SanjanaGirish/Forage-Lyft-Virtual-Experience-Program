@@ -2,7 +2,7 @@ from datetime import date, datetime
 from battery import Battery
 
 
-class NubbinBatter(Battery):
+class NubbinBattery(Battery):
     """ Subclass of Battery that should be serviced once every 2 years
 
     == ATTRIBUTES ==
@@ -12,10 +12,10 @@ class NubbinBatter(Battery):
     last_service_date: date
     current_date: date
 
-    def __init__(self, last_service_date):
+    def __init__(self, current_date, last_service_date):
         super().__init__()
         self.last_service_date = last_service_date
-        self.current_date = datetime.today().date()
+        self.current_date = current_date
 
     def needs_service(self) -> bool:
         """ Method to check if the battery needs service """
