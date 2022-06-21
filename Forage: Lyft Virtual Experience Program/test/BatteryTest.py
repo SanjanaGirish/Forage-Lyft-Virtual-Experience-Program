@@ -1,7 +1,7 @@
 import unittest
 from datetime import date
 
-from Batteries.SpindlerBattery import SpindlerBattery
+from main.Batteries.SpindlerBattery import SpindlerBattery
 from main.Batteries.NubbinBattery import NubbinBattery
 
 
