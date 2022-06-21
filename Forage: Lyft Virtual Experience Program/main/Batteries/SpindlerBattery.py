@@ -1,0 +1,24 @@
+from datetime import date
+from battery import Battery
+
+
+class SpindlerBattery(Battery):
+    """ Subclass of Battery that should be serviced once every 4 years
+
+    == ATTRIBUTES ==
+    last_service_date: date of last service of battery
+    current_date: current date
+    """
+    last_service_date: date
+    current_date: date
+
+    def __init__(self, current_date, last_service_date):
+        super().__init__()
+        self.last_service_date = last_service_date
+        self.current_date = current_date
+
+    def needs_service(self) -> bool:
+        """ Method to check if the battery needs service """
+        service_threshold_date = \
+            self.last_service_date.replace(year=self.last_service_date.year + 4)
+        return service_threshold_date < self.current_date
